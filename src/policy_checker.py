@@ -7,7 +7,7 @@ Usage:
 
 import json
 import sys
-from utils import load_json
+from src.utils import load_json
 
 REQUIRED_CONTROLS = [
     "model_card",
@@ -45,3 +45,4 @@ if __name__ == "__main__":
         print("Usage: python src/policy_checker.py path/to/policies.json")
     else:
         sys.exit(main(sys.argv[1]))
+
