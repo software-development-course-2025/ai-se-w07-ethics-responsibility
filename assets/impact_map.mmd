@@ -1,0 +1,38 @@
+flowchart TB
+  A[Proposed AI Direction] --> B[Primary Stakeholders]
+  A --> C[Expected Value]
+  A --> D[Key Risks]
+  A --> E[Dependencies]
+
+  subgraph Directions
+    A1[Code-centric LLM agents]
+    A2[Automated Test Generation]
+    A3[Self-healing CI]
+    A4[Requirements Mining]
+    A5[Developer Productivity Lenses]
+  end
+
+  A1 --> B1[Developers, CI Teams]
+  A1 --> C1[High]
+  A1 --> D1[Incorrect changes, security]
+  A1 --> E1[CI artifacts, sandbox]
+
+  A2 --> B2[QA, Developers]
+  A2 --> C2[High]
+  A2 --> D2[Flaky tests]
+  A2 --> E2[Test frameworks, coverage]
+
+  A3 --> B3[DevOps, SRE]
+  A3 --> C3[Medium]
+  A3 --> D3[Unintended rollbacks]
+  A3 --> E3[Observability]
+
+  A4 --> B4[Product, BA]
+  A4 --> C4[Medium]
+  A4 --> D4[Misinterpreted specs]
+  A4 --> E4[Rich docs, issue trackers]
+
+  A5 --> B5[Developers, PMs]
+  A5 --> C5[Low]
+  A5 --> D5[Notification fatigue]
+  A5 --> E5[Telemetry, IDE integration]
