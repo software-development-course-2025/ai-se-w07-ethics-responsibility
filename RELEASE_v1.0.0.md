@@ -8,4 +8,5 @@ This release contains:
 - Branding assets and demo HTML  
 - Roadmap and release notes
 
-Recommended tag: `v1.0-ethics-week07`
+Recommended tag: `v1.0.0-ethics-week07`
+
