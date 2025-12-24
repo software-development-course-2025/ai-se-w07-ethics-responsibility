@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Ethics & Responsible AI Toolkit</title>
+
+  <style>
+    /* =====================
+       THEME TOKENS
+    ====================== */
+    :root {
+      --bg: #0d0d0d;
+      --surface: #161616;
+      --card: #1e1e1e;
+      --text: #eaeaea;
+      --muted: #bfbfbf;
+      --accent: #00b4d8;
+      --border: #2a2a2a;
+    }
+
+    [data-theme="light"] {
+      --bg: #f8f9fa;
+      --surface: #ffffff;
+      --card: #ffffff;
+      --text: #212529;
+      --muted: #5f6368;
+      --accent: #0077b6;
+      --border: #e0e0e0;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    /* =====================
+       HEADER
+    ====================== */
+    header {
+      padding: 3rem 1.5rem 2rem;
+      border-bottom: 1px solid var(--border);
+      background: linear-gradient(135deg, var(--bg), var(--surface));
+	  text-align: center;
+    }
+
+    .header-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2.2rem;
+    }
+
+    header p {
+      margin-top: 0.75rem;
+      color: var(--muted);
+      max-width: 720px;
+    }
+
+    .theme-toggle {
+	  background: none;
+	  border: 1px solid var(--border);
+	  color: var(--text);
+	  width: 36px;
+	  height: 36px;
+	  border-radius: 50%;
+	  cursor: pointer;
+	  font-size: 1rem;
+	  display: flex;
+	  align-items: center;
+	  justify-content: center;
+	}
+
+	.theme-toggle:hover {
+	  border-color: var(--accent);
+	}
+
+
+
+    /* =====================
+       MAIN
+    ====================== */
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+
+    section + section {
+      margin-top: 3.5rem;
+    }
+
+    .section-title {
+      font-size: 1.6rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--accent);
+      padding-left: 0.75rem;
+    }
+
+    .section-text {
+      max-width: 850px;
+      color: var(--muted);
+	  text-align: justify;
+    }
+
+    /* =====================
+       GRID & CARDS
+    ====================== */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+      margin-top: 1.75rem;
+    }
+
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 1.75rem;
+      text-decoration: none;
+      color: inherit;
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-3px);
+      border-color: var(--accent);
+      box-shadow: 0 8px 22px rgba(0, 0, 0, 0.25);
+    }
+
+    .card h3 {
+      margin: 0.75rem 0 0.5rem;
+      font-size: 1.15rem;
+    }
+
+    .card p {
+      margin: 0;
+      font-size: 0.95rem;
+      color: var(--muted);
+	  text-align: justify;
+    }
+
+    .icon {
+      width: 20px;
+      height: 20px;
+      stroke: var(--accent);
+      stroke-width: 1.8;
+      fill: none;
+    }
+
+    /* =====================
+       HOW TO USE
+    ====================== */
+    .steps {
+      margin-top: 1.25rem;
+      max-width: 900px;
+    }
+
+    .steps li {
+      margin-bottom: 0.6rem;
+      color: var(--muted);
+    }
+
+    /* =====================
+       FOOTER
+    ====================== */
+    footer {
+      border-top: 1px solid var(--border);
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+
+<body data-theme="dark">
+
+<header>
+  <div class="header-inner">
+    <div>
+      <h1>AI Ethics & Responsible AI Toolkit</h1>
+      <p>
+        Practical frameworks and engineering tools to integrate ethical and
+        responsible AI into real software systems.
+      </p>
+    </div>
+	
+    <button class="theme-toggle" aria-label="Toggle theme" onclick="toggleTheme()">
+	  <span id="theme-icon">🌙</span>
+	</button>
+
+  </div>
+</header>
+
+<main>
+
+  <section>
+    <h2 class="section-title">About the Project</h2>
+    <p class="section-text">
+      This toolkit provides practical frameworks, assessment checklists, and real-world case studies, plus a minimal prototype to help engineering teams evaluate and govern AI systems. It translates ethics into actionable practices that integrate into the software lifecycle, moving beyond theory to deliver tangible outcomes.
+    </p>
+  </section>
+
+  <section>
+    <h2 class="section-title">Key Resources</h2>
+
+    <div class="grid">
+      <a class="card" href="docs/ethics_framework.md" target="_blank">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M12 3l9 4.5-9 4.5-9-4.5L12 3z"/>
+        </svg>
+        <h3>Ethics Framework</h3>
+        <p>Principles and structured guidance to evaluate ethical impact across the AI lifecycle.</p>
+      </a>
+
+      <a class="card" href="docs/responsibility_guidelines.md" target="_blank">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M12 6v6l4 2"/>
+        </svg>
+        <h3>Responsibility Guidelines</h3>
+        <p>Clear ownership and accountability practices for AI-driven systems.</p>
+      </a>
+
+      <a class="card" href="docs/assessment_checklist.md" target="_blank">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M9 11l3 3L22 4"/>
+        </svg>
+        <h3>Assessment Checklist</h3>
+        <p>Practical audit checklist for ethical and responsible AI compliance.</p>
+      </a>
+
+      <a class="card" href="docs/case_studies.md" target="_blank">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M4 4h16v16H4z"/>
+        </svg>
+        <h3>Case Studies</h3>
+        <p>Real-world scenarios mapping ethical risks to mitigation strategies, governance controls, and practical case analyses.</p>
+      </a>
+
+      <a class="card" href="examples/policy_demo.html" target="_blank">
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M5 12h14"/>
+        </svg>
+        <h3>Policy Checker Demo</h3>
+        <p>Live prototype demonstrating automated policy compliance checks using your policy definitions.</p>
+      </a>
+
+      <a class="card" href="src/policy_checker.py" download>
+        <svg class="icon" viewBox="0 0 24 24">
+          <path d="M12 2v20"/>
+        </svg>
+        <h3>Policy Checker (Python)</h3>
+        <p>Minimal reference implementation for JSON-based policy checks.</p>
+      </a>
+    </div>
+  </section>
+
+  <section>
+  <h2 class="section-title">Ethical AI Flow</h2>
+
+  <svg viewBox="0 0 900 160" width="100%" role="img" aria-label="Ethical AI workflow">
+    <defs>
+      <style>
+        .box {
+          fill: var(--card);
+          stroke: var(--border);
+          stroke-width: 1.5;
+          rx: 8;
+        }
+        .text {
+          fill: var(--text);
+          font-size: 14px;
+          font-family: system-ui, sans-serif;
+          text-anchor: middle;
+          dominant-baseline: middle;
+        }
+        .arrow {
+          stroke: var(--accent);
+          stroke-width: 2;
+          fill: none;
+          marker-end: url(#arrowhead);
+        }
+      </style>
+
+      <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+        <polygon points="0 0, 10 3.5, 0 7" fill="var(--accent)" />
+      </marker>
+    </defs>
+
+    <!-- Boxes -->
+    <rect x="20"  y="50" width="160" height="60" class="box"/>
+    <rect x="200" y="50" width="160" height="60" class="box"/>
+    <rect x="380" y="50" width="160" height="60" class="box"/>
+    <rect x="560" y="50" width="160" height="60" class="box"/>
+    <rect x="740" y="50" width="160" height="60" class="box"/>
+
+    <!-- Text -->
+    <text x="100" y="80" class="text">Design & Data</text>
+    <text x="280" y="80" class="text">Risk Assessment</text>
+    <text x="460" y="80" class="text">Mitigation</text>
+    <text x="640" y="80" class="text">Deployment</text>
+    <text x="820" y="80" class="text">Monitoring</text>
+
+    <!-- Arrows -->
+    <line x1="180" y1="80" x2="200" y2="80" class="arrow"/>
+    <line x1="360" y1="80" x2="380" y2="80" class="arrow"/>
+    <line x1="540" y1="80" x2="560" y2="80" class="arrow"/>
+    <line x1="720" y1="80" x2="740" y2="80" class="arrow"/>
+  </svg>
+  </section>
+
+  <section>
+    <h2 class="section-title">How to Use in Practice</h2>
+    <ul class="steps">
+      <li>Start with the Ethics Framework to identify relevant risk dimensions.</li>
+      <li>Apply the Assessment Checklist during design and review phases.</li>
+      <li>Use the Policy Checker prototype to validate governance rules.</li>
+      <li>Reference case studies when defining mitigation strategies.</li>
+    </ul>
+  </section>
+
+
+
+  <section>
+	<h2 class="section-title">Academic Context</h2>
+	<p class="section-text">
+	  This project was developed in an academic context to explore how ethical and responsible AI principles can be operationalized within software engineering practices. It aligns with contemporary discussions on AI governance, accountability and transparency, emphasizing the role of engineers in identifying risks, implementing safeguards and continuously monitoring AI-driven systems throughout their lifecycle.
+	</p>
+  </section>
+
+</main>
+
+<footer>
+  Augusto Mate • Software Development Course 2025 • AI Ethics & Responsibility • MIT License
+</footer>
+
+<script>
+  function toggleTheme() {
+    const body = document.body;
+    const icon = document.getElementById("theme-icon");
+
+    const isLight = body.dataset.theme === "light";
+    body.dataset.theme = isLight ? "dark" : "light";
+    icon.textContent = isLight ? "🌙" : "☀️";
+  }
+</script>
+
+</body>
+</html>
